@@ -1,0 +1,10 @@
+{
+ "rows_per_shard": 2500012,
+ "num_shards": 128,
+ "row_width": 90,
+ "codes_width": 80,
+ "scales_width": 10,
+ "total_rows": 320001536,
+ "shard_dtype": "U8",
+ "snapshot": "925d7be6c14c6c9442ef83e8f05b5a3c39304f69"
+}

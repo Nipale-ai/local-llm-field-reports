@@ -1,0 +1,6 @@
+{"arm": "b11-gdn", "target": 6941, "rep": 1, "nonce": "5dac38780b6140aaa5b404742b1cf786", "prompt_tokens": 6944, "ttft_s": 4.3966, "finish": "length", "prefill_tps": 1579.4}
+{"arm": "b11-gdn", "target": 6941, "rep": 2, "nonce": "9e92734af7b248f69b36ef6bc2d0aa3b", "prompt_tokens": 6945, "ttft_s": 3.4416, "finish": "length", "prefill_tps": 2018.0}
+{"arm": "b11-gdn", "target": 6941, "rep": 3, "nonce": "79d9820c451042acb51e50c13f08f8f8", "prompt_tokens": 6947, "ttft_s": 3.4695, "finish": "length", "prefill_tps": 2002.3}
+{"arm": "b11-gdn", "target": 27120, "rep": 1, "nonce": "6d7d66a35d3c4fc0aa5db236236b741f", "prompt_tokens": 26238, "ttft_s": 13.4519, "finish": "length", "prefill_tps": 1950.5}
+{"arm": "b11-gdn", "target": 27120, "rep": 2, "nonce": "1e7cd5ebf7f1496a803001926454f6be", "prompt_tokens": 27167, "ttft_s": 13.2376, "finish": "length", "prefill_tps": 2052.3}
+{"arm": "b11-gdn", "target": 27120, "rep": 3, "nonce": "7e8e7d69d4744f84a4e71ceb5a0410a9", "prompt_tokens": 27168, "ttft_s": 12.9498, "finish": "length", "prefill_tps": 2098.0}

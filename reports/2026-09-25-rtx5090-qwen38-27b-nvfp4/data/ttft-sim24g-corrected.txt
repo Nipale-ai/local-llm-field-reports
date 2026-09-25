@@ -1,0 +1,4 @@
+8k rep0: prompt_tokens=7944 ttft=1104 ms
+8k rep1: prompt_tokens=7944 ttft=1064 ms
+32k rep0: prompt_tokens=31542 ttft=5531 ms
+32k rep1: prompt_tokens=31542 ttft=5527 ms

@@ -1,0 +1,4 @@
+{"tag": "STOCK-256K-MTP3", "target_len": 8192, "rep": 0, "ttft_s": 0.7569236755371094, "wall_s": 0.8371388912200928, "completion_tokens": 4, "ok": true, "err": null, "vram_mib": 28870.0}
+{"tag": "STOCK-256K-MTP3", "target_len": 8192, "rep": 1, "ttft_s": 0.7834503650665283, "wall_s": 0.8636982440948486, "completion_tokens": 4, "ok": true, "err": null, "vram_mib": 28870.0}
+{"tag": "STOCK-256K-MTP3", "target_len": 32768, "rep": 0, "ttft_s": 3.845673084259033, "wall_s": 3.9163131713867188, "completion_tokens": 4, "ok": true, "err": null, "vram_mib": 28870.0}
+{"tag": "STOCK-256K-MTP3", "target_len": 32768, "rep": 1, "ttft_s": 3.86476469039917, "wall_s": 3.93512225151062, "completion_tokens": 4, "ok": true, "err": null, "vram_mib": 28870.0}

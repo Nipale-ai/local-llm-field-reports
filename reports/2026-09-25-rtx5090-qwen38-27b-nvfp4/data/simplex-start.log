@@ -1,0 +1,6 @@
+Starting in the background (pid 571876).
+  log:   logs/simplex-2026-09-25_174158.log
+  stop:  ./stop.sh
+  check: ./start.sh --status
+
+It is starting. When the model is loaded it answers on http://127.0.0.1:8888/
