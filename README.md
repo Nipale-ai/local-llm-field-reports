@@ -12,8 +12,8 @@ from, so every figure can be re-checked against the data.
 
 Recipes for running large models locally spread fast, and published numbers
 are hard to compare — different prompts, different client vs. engine-side
-timing, different machines. I re-measure public recipes under one consistent
-methodology and post the results back to the upstream projects
+timing, different machines. AI agents working for me re-measure public recipes under one consistent
+methodology, and the results go back to the upstream projects
 ([MiaAI-Lab](https://github.com/MiaAI-Lab) recipes mostly, so far). This repo
 is the durable home for the full data behind those comments.
 
@@ -38,7 +38,7 @@ is the durable home for the full data behind those comments.
 |---|---|---|
 | [2026-09-25 Qwen3.8-Flash-Next, single DGX Spark](reports/2026-09-25-qwen38-flash-next-single-spark/REPORT.md) | `MiaAI-Lab/Qwen3.8-Flash-Next-Single-DGX-Spark` | Stock recipe reproduces the published numbers; best config (MTP k=6 + BF16 KV + FP8 draft head) reaches **83.7 tok/s code single-stream, +42 % over stock** — verified on two nodes, 21 variant runs incl. all losers documented. |
 | [2026-09-25 Qwen3.8-27B-NVFP4 on RTX 5090](reports/2026-09-25-rtx5090-qwen38-27b-nvfp4/REPORT.md) | `MiaAI-Lab/Qwen3.8-27B-NVFP4-RTX-5090` + `…-16gb-NVIDIA-GPUs-one-click-install` | First external data point: 104/118 t/s stock single-stream (README's ~160 not reproduced), ~650–690 t/s aggregate at 8 streams, working 24 GB config found, and the issue #1 build-OOM quantitatively explained (80.2 GiB compiler RSS unbounded → 30.6 GiB at `MAX_JOBS=4`). |
-| [2026-09-25 Issue #59: cold PLE table test](reports/2026-09-25-issue59-cold-ple-table/REPORT.md) | same single-Spark recipe | The "PLE table falls out of page cache → 13–23 tok/s" hypothesis is **refuted on our box**: a verifiably cold (0 % resident) 27 GiB table decodes at the same ~49–50 tok/s as warm; the remaining reporter delta sits in the MTP path. |
+| [2026-09-25 Issue #59: cold PLE table test](reports/2026-09-25-issue59-cold-ple-table/REPORT.md) | same single-Spark recipe | The "PLE table falls out of page cache → 13–23 tok/s" hypothesis is **refuted on our box**: a verifiably cold (0 % resident) 26.8 GiB table decodes at the same ~49–50 tok/s as warm; the remaining reporter delta sits in the MTP path. |
 
 ## Where the results were posted
 
@@ -50,6 +50,7 @@ is the durable home for the full data behind those comments.
 | Issue #19: throughput ceiling | S-sweep data: aggregate does not flatline at 4 streams; `MAX_NUM_SEQS` is not a throughput lever below the cap | [link](https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Single-DGX-Spark/issues/19) |
 | RTX-5090 recipe: issues #1, #3, #4 | JIT build RAM peaks quantified; 24 GB config found; full measurement report | [#1](https://github.com/MiaAI-Lab/Qwen3.8-27B-NVFP4-RTX-5090/issues/1) · [#3](https://github.com/MiaAI-Lab/Qwen3.8-27B-NVFP4-RTX-5090/issues/3) · [#4](https://github.com/MiaAI-Lab/Qwen3.8-27B-NVFP4-RTX-5090/issues/4) |
 | 16 GB one-click repo: issue #10 | EXL3 engine is not the limit: ~130 t/s/stream stable to c=4 → reporter's c4 drop is local | [link](https://github.com/MiaAI-Lab/Qwen3.8-27B-16gb-NVIDIA-GPUs-one-click-install/issues/10) |
+| sparkDash PR #113: CRLF SSE parsing | Bug reproduced on `main` (0 tokens), fix verified incl. split-delimiter case; harness in [`tools/`](tools/) | [link](https://github.com/MiaAI-Lab/sparkDash/pull/113) |
 | Raw-data gist | All sweep JSONL for the posted PR #70 / #19 numbers | [gist](https://gist.github.com/Nipale-ai/e492c7d1e4830183c84e314c83e4d5e3) |
 
 ### In progress (measured or measuring, not yet posted)
@@ -65,11 +66,6 @@ is the durable home for the full data behind those comments.
   on a third node.
 - [Dual-spark recipe](https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks/pull/67):
   first real end-to-end boot of PR #67 plus measurement.
-- [sparkDash PR #113](https://github.com/MiaAI-Lab/sparkDash/pull/113)
-  (CRLF SSE parsing): bug reproduced on `main`, fix verified incl.
-  split-delimiter edge case — review comment drafted, data checked;
-  the test harness is [`fake_sse_server.py`](tools/fake_sse_server.py) +
-  [`bench_crlf.mjs`](tools/bench_crlf.mjs).
 - [Issue #11](https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Single-DGX-Spark/issues/11):
   own fix for `EXTRA_VLLM_ARGS` quoting — all 5 test cases green
   ([issue11-test.sh](tools/issue11-test.sh)); PR drafted, needs a fork.

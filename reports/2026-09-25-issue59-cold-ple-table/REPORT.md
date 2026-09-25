@@ -6,7 +6,7 @@
 
 Issue #59 reporters see 13–28 tok/s single-stream where a healthy box gets
 ~50. Their py-spy shows the GPU worker blocked ~25–30 ms/step in
-`ple_offload.wait_d2h`. Hypothesis under test: **the ~27 GiB PLE table falls
+`ple_offload.wait_d2h`. Hypothesis under test: **the 26.8 GiB PLE table falls
 out of the page cache, decode faults rows in from NVMe, and the ~25 ms
 `wait_d2h` window is storage latency.**
 
