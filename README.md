@@ -51,13 +51,14 @@ is the durable home for the full data behind those comments.
 | RTX-5090 recipe: issues #1, #3, #4 | JIT build RAM peaks quantified; 24 GB config found; full measurement report | [#1](https://github.com/MiaAI-Lab/Qwen3.8-27B-NVFP4-RTX-5090/issues/1) · [#3](https://github.com/MiaAI-Lab/Qwen3.8-27B-NVFP4-RTX-5090/issues/3) · [#4](https://github.com/MiaAI-Lab/Qwen3.8-27B-NVFP4-RTX-5090/issues/4) |
 | 16 GB one-click repo: issue #10 | EXL3 engine is not the limit: ~130 t/s/stream stable to c=4 → reporter's c4 drop is local | [link](https://github.com/MiaAI-Lab/Qwen3.8-27B-16gb-NVIDIA-GPUs-one-click-install/issues/10) |
 | sparkDash PR #113: CRLF SSE parsing | Bug reproduced on `main` (0 tokens), fix verified incl. split-delimiter case; harness in [`tools/`](tools/) | [link](https://github.com/MiaAI-Lab/sparkDash/pull/113) |
+| PR #31 (rwl4): FP8 draft head + GDN prefill | Both maintainer-requested pre-merge checks: re-measured on rebased code (+6.0 % solo code decode, +6 % cold prefill) and a 800-request tool-enum A/B (no significant FP8 effect) | [link](https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Single-DGX-Spark/pull/31) |
+| PR #70: k-schedule follow-up | Root cause of the dynamic-SD capture crash in the pinned image | [link](https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Single-DGX-Spark/pull/70) |
+| Own PR #76 | Fix for JSON args in `EXTRA_VLLM_ARGS` (#11, #5), tested with seven launches on a DGX Spark | [link](https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Single-DGX-Spark/pull/76) |
+| 16 GB one-click repo: issue #11 | Crash above ~40k context explained (page reservation vs. compaction threshold) + clamp patch, 16 GB simulated on an RTX 5090 | [link](https://github.com/MiaAI-Lab/Qwen3.8-27B-16gb-NVIDIA-GPUs-one-click-install/issues/11) |
 | Raw-data gist | All sweep JSONL for the posted PR #70 / #19 numbers | [gist](https://gist.github.com/Nipale-ai/e492c7d1e4830183c84e314c83e4d5e3) |
 
 ### In progress (measured or measuring, not yet posted)
 
-- [PR #31](https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Single-DGX-Spark/pull/31)
-  (rwl4): FP8 draft head — the +42 % config above; maintainer-requested merge
-  checks running.
 - [Issue #48](https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Single-DGX-Spark/issues/48):
   model aborts agent tasks mid-run — first reproduction succeeded, frequency
   and trigger under measurement.
@@ -66,9 +67,7 @@ is the durable home for the full data behind those comments.
   on a third node.
 - [Dual-spark recipe](https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks/pull/67):
   first real end-to-end boot of PR #67 plus measurement.
-- [Issue #11](https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Single-DGX-Spark/issues/11):
-  own fix for `EXTRA_VLLM_ARGS` quoting — all 5 test cases green
-  ([issue11-test.sh](tools/issue11-test.sh)); PR drafted, needs a fork.
+
 
 ## Tools
 
