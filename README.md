@@ -48,7 +48,6 @@ is the durable home for the full data behind those comments.
 | Issue #59: slow single-stream decode | Fresh-install baseline: 49.8 prose / 58.8 code tok/s — not in the reporters' 13–28 band | [link](https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Single-DGX-Spark/issues/59) |
 | Issue #53: fresh-install start crash | Tested all three fix PRs (#55, #56, #65) — all work; #65 landed via #72 | [link](https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Single-DGX-Spark/issues/53) |
 | Issue #19: throughput ceiling | S-sweep data: aggregate does not flatline at 4 streams; `MAX_NUM_SEQS` is not a throughput lever below the cap | [link](https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Single-DGX-Spark/issues/19) |
-| sparkDash PR #113: CRLF SSE parsing | Independent review: bug reproduced on `main`, fix verified incl. split-delimiter edge case | [link](https://github.com/MiaAI-Lab/sparkDash/pull/113) |
 | RTX-5090 recipe: issues #1, #3, #4 | JIT build RAM peaks quantified; 24 GB config found; full measurement report | [#1](https://github.com/MiaAI-Lab/Qwen3.8-27B-NVFP4-RTX-5090/issues/1) · [#3](https://github.com/MiaAI-Lab/Qwen3.8-27B-NVFP4-RTX-5090/issues/3) · [#4](https://github.com/MiaAI-Lab/Qwen3.8-27B-NVFP4-RTX-5090/issues/4) |
 | 16 GB one-click repo: issue #10 | EXL3 engine is not the limit: ~130 t/s/stream stable to c=4 → reporter's c4 drop is local | [link](https://github.com/MiaAI-Lab/Qwen3.8-27B-16gb-NVIDIA-GPUs-one-click-install/issues/10) |
 | Raw-data gist | All sweep JSONL for the posted PR #70 / #19 numbers | [gist](https://gist.github.com/Nipale-ai/e492c7d1e4830183c84e314c83e4d5e3) |
@@ -66,6 +65,14 @@ is the durable home for the full data behind those comments.
   on a third node.
 - [Dual-spark recipe](https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks/pull/67):
   first real end-to-end boot of PR #67 plus measurement.
+- [sparkDash PR #113](https://github.com/MiaAI-Lab/sparkDash/pull/113)
+  (CRLF SSE parsing): bug reproduced on `main`, fix verified incl.
+  split-delimiter edge case — review comment drafted, data checked;
+  the test harness is [`fake_sse_server.py`](tools/fake_sse_server.py) +
+  [`bench_crlf.mjs`](tools/bench_crlf.mjs).
+- [Issue #11](https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Single-DGX-Spark/issues/11):
+  own fix for `EXTRA_VLLM_ARGS` quoting — all 5 test cases green
+  ([issue11-test.sh](tools/issue11-test.sh)); PR drafted, needs a fork.
 
 ## Tools
 
