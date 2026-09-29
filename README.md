@@ -1,5 +1,8 @@
 # local-llm-field-reports
 
+> **⚠️ AI-GENERATED CONTENT.** Every measurement and every report in this repository is run and written by AI agents (Devin SWE-2 Max, Claude) working for Niklas Lenz, an independent creator. A human spot-checks the headline numbers against the raw data but does not review every line. Each report labels its findings *confirmed* or *preliminary*. Single box per test, small samples. Nothing here is an official benchmark of any project. Found a mistake? Please open an issue, the raw data is next to every report.
+
+
 Independent, reproducible measurements of public local-LLM recipes, run on my
 own hardware. Each report contains the full numbers — including every variant
 that did **not** work — plus the raw JSONL/log receipts the numbers were taken
@@ -39,6 +42,9 @@ is the durable home for the full data behind those comments.
 | [2026-09-25 Qwen3.8-Flash-Next, single DGX Spark](reports/2026-09-25-qwen38-flash-next-single-spark/REPORT.md) | `MiaAI-Lab/Qwen3.8-Flash-Next-Single-DGX-Spark` | Stock recipe reproduces the published numbers; best config (MTP k=6 + BF16 KV + FP8 draft head) reaches **83.7 tok/s code single-stream, +42 % over stock** — verified on two nodes, 21 variant runs incl. all losers documented. |
 | [2026-09-25 Qwen3.8-27B-NVFP4 on RTX 5090](reports/2026-09-25-rtx5090-qwen38-27b-nvfp4/REPORT.md) | `MiaAI-Lab/Qwen3.8-27B-NVFP4-RTX-5090` + `…-16gb-NVIDIA-GPUs-one-click-install` | First external data point: 104/118 t/s stock single-stream (README's ~160 not reproduced), ~650–690 t/s aggregate at 8 streams, working 24 GB config found, and the issue #1 build-OOM quantitatively explained (80.2 GiB compiler RSS unbounded → 30.6 GiB at `MAX_JOBS=4`). |
 | [2026-09-25 Issue #59: cold PLE table test](reports/2026-09-25-issue59-cold-ple-table/REPORT.md) | same single-Spark recipe | The "PLE table falls out of page cache → 13–23 tok/s" hypothesis is **refuted on our box**: a verifiably cold (0 % resident) 26.8 GiB table decodes at the same ~49–50 tok/s as warm; the remaining reporter delta sits in the MTP path. |
+| [2026-09-30 TensorFold on an RTX 5090: 27B + DFlash2 refused at startup](reports/2026-09-30-tensorfold-rtx5090-drafts-refused/REPORT.md) | [TensorFold](https://github.com/ashhart/TensorFold) 0.3.7 | The startup memory check counts 29.2 GiB against a 26.9 GiB budget, the real peak is 16.6 GiB. `--no-drafts` runs at about 75 tok/s. With a local test patch drafts reach about 210 tok/s (4K window). Upstream issue #112. |
+| [2026-09-30 TensorFold on two DGX Sparks: pin the RoCE device](reports/2026-09-30-tensorfold-two-spark-roce/REPORT.md) | TensorFold 0.3.5.1, TP=2 | NCCL picked the wrong RoCE device; pinning `NCCL_IB_HCA` fixes it. RoCE is about 2.2x faster than the Socket fallback (drafted, medians of three). |
+| [2026-09-30 TensorFold issue #98: prefix retention](reports/2026-09-30-tensorfold-issue98-prefix-retention/REPORT.md) | TensorFold 0.3.7 | An identical 11k-token resend is fully re-prefilled on Flash Next (4.6 s, 0 tokens cached) and resumed on the 27B (0.11 s, 11,048 cached). |
 
 ## Where the results were posted
 

@@ -1,0 +1,9 @@
+[tensorfold] loading Qwen3.8-27B-MLX-4bit: Qwen3.8 dense (qwen3_5) on CUDA, rank 0 of 2
+/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+[tensorfold] CUDA rank 0 startup estimate 56.61 GiB within 98.58 GiB; native 262144, allocated prompt/reply window 262144, cache slots 262156
+[tensorfold] serving Qwen3.8-27B-MLX-4bit at http://127.0.0.1:8080/v1 on CUDA, rank 0 of 2 (sampling: temperature 1.0, top_k 20, top_p 0.95; drafts: on; context: 262144; loaded in 37.5s)
+/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)

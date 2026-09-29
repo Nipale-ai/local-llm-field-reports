@@ -1,0 +1,6 @@
+{"label": "socket-draft1", "i": 0, "tok_per_s_decode": 25.6, "tok_per_s_wall": 22.2, "wall_s": 5.78, "completion_tokens": 128, "token_sha": "86b649bbb2b3", "finish_reason": "length"}
+{"label": "socket-draft2", "i": 0, "tok_per_s_decode": 27.3, "tok_per_s_wall": 26.1, "wall_s": 4.9, "completion_tokens": 128, "token_sha": "86b649bbb2b3", "finish_reason": "length"}
+{"label": "socket-draft3", "i": 0, "tok_per_s_decode": 27.5, "tok_per_s_wall": 26.4, "wall_s": 4.85, "completion_tokens": 128, "token_sha": "86b649bbb2b3", "finish_reason": "length"}
+{"label": "socket-serial1", "i": 0, "tok_per_s_decode": 12.4, "tok_per_s_wall": 12.2, "wall_s": 10.53, "completion_tokens": 128, "token_sha": "86b649bbb2b3", "finish_reason": "length"}
+{"label": "socket-serial2", "i": 0, "tok_per_s_decode": 12.3, "tok_per_s_wall": 12.1, "wall_s": 10.61, "completion_tokens": 128, "token_sha": "86b649bbb2b3", "finish_reason": "length"}
+{"label": "socket-serial3", "i": 0, "tok_per_s_decode": 11.9, "tok_per_s_wall": 11.7, "wall_s": 10.97, "completion_tokens": 128, "token_sha": "86b649bbb2b3", "finish_reason": "length"}

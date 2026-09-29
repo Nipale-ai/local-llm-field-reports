@@ -1,0 +1,6 @@
+{"label": "roce-draft1", "i": 0, "tok_per_s_decode": 48.5, "tok_per_s_wall": 31.6, "wall_s": 4.05, "completion_tokens": 128, "token_sha": "86b649bbb2b3", "finish_reason": "length"}
+{"label": "roce-draft2", "i": 0, "tok_per_s_decode": 61.4, "tok_per_s_wall": 58.6, "wall_s": 2.18, "completion_tokens": 128, "token_sha": "86b649bbb2b3", "finish_reason": "length"}
+{"label": "roce-draft3", "i": 0, "tok_per_s_decode": 61.2, "tok_per_s_wall": 58.5, "wall_s": 2.19, "completion_tokens": 128, "token_sha": "86b649bbb2b3", "finish_reason": "length"}
+{"label": "roce-serial1", "i": 0, "tok_per_s_decode": 24.4, "tok_per_s_wall": 24.0, "wall_s": 5.33, "completion_tokens": 128, "token_sha": "86b649bbb2b3", "finish_reason": "length"}
+{"label": "roce-serial2", "i": 0, "tok_per_s_decode": 24.6, "tok_per_s_wall": 24.1, "wall_s": 5.31, "completion_tokens": 128, "token_sha": "86b649bbb2b3", "finish_reason": "length"}
+{"label": "roce-serial3", "i": 0, "tok_per_s_decode": 24.6, "tok_per_s_wall": 24.1, "wall_s": 5.31, "completion_tokens": 128, "token_sha": "86b649bbb2b3", "finish_reason": "length"}

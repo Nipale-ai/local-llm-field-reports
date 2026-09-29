@@ -1,0 +1,3 @@
+{"label": "prefill-run1", "i": 0, "tok_per_s_decode": 28.6, "tok_per_s_wall": 3.8, "wall_s": 8.49, "completion_tokens": 32, "token_sha": "85b58a7f9de0", "finish_reason": "length"}
+{"label": "prefill-run2", "i": 0, "tok_per_s_decode": 74.3, "tok_per_s_wall": 55.0, "wall_s": 0.58, "completion_tokens": 32, "token_sha": "85b58a7f9de0", "finish_reason": "length"}
+{"label": "prefill-run3", "i": 0, "tok_per_s_decode": 73.9, "tok_per_s_wall": 54.7, "wall_s": 0.58, "completion_tokens": 32, "token_sha": "85b58a7f9de0", "finish_reason": "length"}

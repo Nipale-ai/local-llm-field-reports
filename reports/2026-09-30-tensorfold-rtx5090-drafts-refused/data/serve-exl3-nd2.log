@@ -1,0 +1,5 @@
+[tensorfold] loading 6fe61ad620abfe97c5b49f9722c2bceeea4ccc28: Qwen3.8 dense (qwen3_5) on CUDA
+[tensorfold] EXL3 packs are experimental: replies are exact; on a DGX Spark decode runs 0.8-1.2x the MLX checkpoint and prompts about half as fast (docs/recipes/qwen3.8-27b.md#exl3-checkpoints-experimental)
+[tensorfold] CUDA rank 0 startup estimate 24.10 GiB within 26.90 GiB; native 262144, allocated prompt/reply window 32768, cache slots 32780
+[tensorfold] serving 6fe61ad620abfe97c5b49f9722c2bceeea4ccc28 at http://127.0.0.1:8080/v1 on CUDA (sampling: temperature 1.0, top_k 20, top_p 0.95; drafts: off; context: 32768; loaded in 4.2s)
+[tensorfold] building CUDA extension tensorfold_exl3_linear_v3 (first start after an install or update; later starts reuse it)

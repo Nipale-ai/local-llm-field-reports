@@ -1,0 +1,3 @@
+[tensorfold] loading Qwen3.8-27B-MLX-4bit: Qwen3.8 dense (qwen3_5) on CUDA
+[tensorfold] CUDA rank 0 startup estimate 91.05 GiB within 101.90 GiB; native 262144, allocated prompt/reply window 262144, cache slots 262156
+[tensorfold] serving Qwen3.8-27B-MLX-4bit at http://127.0.0.1:8080/v1 on CUDA (sampling: temperature 1.0, top_k 20, top_p 0.95; drafts: on; context: 262144; loaded in 104.5s)

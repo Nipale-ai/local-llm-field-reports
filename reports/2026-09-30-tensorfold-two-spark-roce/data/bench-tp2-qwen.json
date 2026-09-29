@@ -1,0 +1,66 @@
+[
+ {
+  "label": "tp2-roce",
+  "prompt": "fibonacci-raw",
+  "temperature": 1.0,
+  "tokens": 64,
+  "decode_tps_median": 81.9214244109277,
+  "decode_tps_all": [
+   79.84,
+   139.24,
+   92.03,
+   81.92,
+   75.61
+  ],
+  "ttft_s_median": 0.06978008098667488,
+  "sample": "\n\n<think>\nThe user wants a short Python function that computes the Fibonacci sequence, plus an explanation. Let me think about what approach to take:\n\nOptions:\n"
+ },
+ {
+  "label": "tp2-roce",
+  "prompt": "gpu-chat-no-think",
+  "temperature": 1.0,
+  "tokens": 64,
+  "decode_tps_median": 69.9269936551813,
+  "decode_tps_all": [
+   74.85,
+   60.97,
+   69.93,
+   75.7,
+   57.43
+  ],
+  "ttft_s_median": 0.07793227600632235,
+  "sample": "### Part 1: How Matrix Multiplication Uses a GPU (Plain English)\n\nImagine you have a giant spreadsheet (Matrix A) and another giant spreadsheet (Matrix B). You "
+ },
+ {
+  "label": "tp2-roce",
+  "prompt": "fibonacci-raw",
+  "temperature": 0.0,
+  "tokens": 64,
+  "decode_tps_median": 79.83139669692605,
+  "decode_tps_all": [
+   80.7,
+   79.83,
+   79.62,
+   79.56,
+   79.85
+  ],
+  "ttft_s_median": 0.06439251298434101,
+  "sample": "\n\n<think>\nThe user wants a short Python function that computes the Fibonacci sequence, along with an explanation. Let me think about what would be most useful:\n"
+ },
+ {
+  "label": "tp2-roce",
+  "prompt": "gpu-chat-no-think",
+  "temperature": 0.0,
+  "tokens": 64,
+  "decode_tps_median": 71.44507605156095,
+  "decode_tps_all": [
+   67.46,
+   70.27,
+   72.32,
+   71.45,
+   71.93
+  ],
+  "ttft_s_median": 0.0706613149959594,
+  "sample": "### How Matrix Multiplication Uses a GPU (In Plain English)\n\nTo understand how a GPU handles matrix multiplication, it helps to compare it to a CPU (the main pr"
+ }
+]

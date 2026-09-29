@@ -1,0 +1,3 @@
+[tensorfold] loading 6fe61ad620abfe97c5b49f9722c2bceeea4ccc28: Qwen3.8 dense (qwen3_5) on CUDA
+[tensorfold] EXL3 packs are experimental: replies are exact; on a DGX Spark decode runs 0.8-1.2x the MLX checkpoint and prompts about half as fast (docs/recipes/qwen3.8-27b.md#exl3-checkpoints-experimental)
+tensorfold: CUDA startup memory budget cannot fit the 262144-token native window or any smaller one; estimated largest fitting prompt-plus-reply window: 0 tokens across the ranks. Please free memory or use smaller/quantized weights; no model weights or KV caches have been loaded. KV precision is unchanged.

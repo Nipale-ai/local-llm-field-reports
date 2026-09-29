@@ -1,0 +1,66 @@
+[
+ {
+  "label": "glm-tp2-mtp",
+  "prompt": "fibonacci-raw",
+  "temperature": 1.0,
+  "tokens": 64,
+  "decode_tps_median": 32.07984927478581,
+  "decode_tps_all": [
+   31.09,
+   35.58,
+   25.59,
+   32.08,
+   32.66
+  ],
+  "ttft_s_median": 0.13625526000396349,
+  "sample": " Also, write a function that returns the first n Fibonacci numbers.\n\n```python\ndef fibonacci(n):\n    \"\"\"Compute the nth Fibonacci number.\n\n    The Fibonacci seq"
+ },
+ {
+  "label": "glm-tp2-mtp",
+  "prompt": "gpu-chat-no-think",
+  "temperature": 1.0,
+  "tokens": 64,
+  "decode_tps_median": 28.36737086754766,
+  "decode_tps_all": [
+   30.58,
+   26.8,
+   28.37,
+   29.01,
+   27.68
+  ],
+  "ttft_s_median": 0.18967449601041153,
+  "sample": "# Matrix Multiplication on a GPU, Explained Simply\n\n## The Plain English Explanation\n\nImagine you have to grade two million math tests, and each test takes one "
+ },
+ {
+  "label": "glm-tp2-mtp",
+  "prompt": "fibonacci-raw",
+  "temperature": 0.0,
+  "tokens": 64,
+  "decode_tps_median": 37.778070071905326,
+  "decode_tps_all": [
+   37.77,
+   37.72,
+   38.08,
+   37.78,
+   37.86
+  ],
+  "ttft_s_median": 0.13644764499622397,
+  "sample": " Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ... The next number is found by adding up the two numbers before it. The Fibonacci sequence i"
+ },
+ {
+  "label": "glm-tp2-mtp",
+  "prompt": "gpu-chat-no-think",
+  "temperature": 0.0,
+  "tokens": 64,
+  "decode_tps_median": 31.36951847215869,
+  "decode_tps_all": [
+   31.43,
+   31.37,
+   31.28,
+   31.32,
+   31.37
+  ],
+  "ttft_s_median": 0.18290949999936856,
+  "sample": "# Matrix Multiplication on a GPU\n\n## The Plain-English Explanation\n\nImagine you have a huge stack of math problems to solve, and every problem is independent of"
+ }
+]

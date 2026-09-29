@@ -1,0 +1,94 @@
+====/root/serve.log====
+[tensorfold] loading Qwen3.8-27B-MLX-4bit: Qwen3.8 dense (qwen3_5) on CUDA, rank 0 of 2
+/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/usr/local/bin/tensorfold", line 6, in <module>
+[rank0]:     sys.exit(main())
+[rank0]:              ^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/tensorfold/cli.py", line 118, in main
+[rank0]:     return int(args.func(args) or 0)
+[rank0]:                ^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/tensorfold/cli.py", line 396, in cmd_serve
+[rank0]:     return _serve_cuda(args, family, model_dir, context)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/tensorfold/cli.py", line 326, in _serve_cuda
+[rank0]:     engine = family.package.cuda_engine(model_dir, **options)
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/tensorfold/families/qwen3_5/__init__.py", line 251, in cuda_engine
+[rank0]:     return Qwen27Engine(Path(model_dir), draft, max_rows=12, tp=tp, rank=rank, master=master, port=master_port,
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/tensorfold/families/qwen3_5/cuda/engine.py", line 40, in __init__
+[rank0]:     dist.all_gather_into_tensor(both, flags)
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+[rank0]:     return func(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/typing_extensions.py", line 3140, in wrapper
+[rank0]:     return arg(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 4413, in all_gather_into_tensor
+[rank0]:     return all_gather_single(output_tensor, input_tensor, group, async_op)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+[rank0]:     return func(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 4387, in all_gather_single
+[rank0]:     work = group.all_gather_single(output_tensor, input_tensor, opts)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: torch.distributed.DistBackendError: NCCL error in: /opt/pytorch/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:3866, unhandled system error (run with NCCL_DEBUG=INFO for details), NCCL version 2.30.7
+[rank0]: ncclSystemError: System call (e.g. socket, malloc) or external library call failed or device error. 
+[rank0]: Last error:
+[rank0]: Call to ibv_modify_qp failed with 110 Connection timed out, on dev rocep1s0f0:1, curr state INIT, next state RTR, local GID index 3, local GID ::ffff:192.168.102.1, remote GID ::ffff:192.168.104.1
+[rank0]:[W929 18:06:57.113263298 ProcessGroupNCCL.cpp:1624] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+====/root/serve2.log====
+[tensorfold] loading Qwen3.8-27B-MLX-4bit: Qwen3.8 dense (qwen3_5) on CUDA, rank 0 of 2
+/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+[tensorfold] CUDA rank 0 startup estimate 56.61 GiB within 97.91 GiB; native 262144, allocated prompt/reply window 262144, cache slots 262156
+[tensorfold] serving Qwen3.8-27B-MLX-4bit at http://127.0.0.1:8080/v1 on CUDA, rank 0 of 2 (sampling: temperature 1.0, top_k 20, top_p 0.95; drafts: on; context: 262144; loaded in 180.1s)
+/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+====/root/pip.log====
+Collecting git+https://github.com/ashhart/TensorFold.git@v0.3.5.1
+  Cloning https://github.com/ashhart/TensorFold.git (to revision v0.3.5.1) to /tmp/pip-req-build-ivuzm0to
+  Running command git clone --filter=blob:none --quiet https://github.com/ashhart/TensorFold.git /tmp/pip-req-build-ivuzm0to
+  Running command git checkout -q 9db8605828d2e0b356d564d071c847cea8966d26
+  Resolved https://github.com/ashhart/TensorFold.git to commit 9db8605828d2e0b356d564d071c847cea8966d26
+  DEPRECATION: Setting PIP_CONSTRAINT will not affect build constraints in the future, pip 26.2 will enforce this behaviour change. A possible replacement is to specify build constraints using --build-constraint or PIP_BUILD_CONSTRAINT. To disable this warning without any build constraints set --use-feature=build-constraint or PIP_USE_FEATURE="build-constraint".
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: numpy>=1.26 in /usr/local/lib/python3.12/dist-packages (from tensorfold==0.3.5.1) (2.1.0)
+Requirement already satisfied: huggingface-hub>=0.24 in /usr/local/lib/python3.12/dist-packages (from tensorfold==0.3.5.1) (1.24.0)
+Requirement already satisfied: tokenizers>=0.20 in /usr/local/lib/python3.12/dist-packages (from tensorfold==0.3.5.1) (0.23.1)
+Requirement already satisfied: safetensors>=0.4 in /usr/local/lib/python3.12/dist-packages (from tensorfold==0.3.5.1) (0.8.0)
+Requirement already satisfied: jinja2>=3.1 in /usr/local/lib/python3.12/dist-packages (from tensorfold==0.3.5.1) (3.1.6)
+Requirement already satisfied: click<9.0.0,>=8.4.2 in /usr/local/lib/python3.12/dist-packages (from huggingface-hub>=0.24->tensorfold==0.3.5.1) (8.4.2)
+Requirement already satisfied: filelock>=3.10.0 in /usr/local/lib/python3.12/dist-packages (from huggingface-hub>=0.24->tensorfold==0.3.5.1) (3.32.0)
+Requirement already satisfied: fsspec>=2023.5.0 in /usr/local/lib/python3.12/dist-packages (from huggingface-hub>=0.24->tensorfold==0.3.5.1) (2026.4.0)
+Requirement already satisfied: hf-xet<2.0.0,>=1.5.1 in /usr/local/lib/python3.12/dist-packages (from huggingface-hub>=0.24->tensorfold==0.3.5.1) (1.5.2)
+Requirement already satisfied: httpx<1,>=0.23.0 in /usr/local/lib/python3.12/dist-packages (from huggingface-hub>=0.24->tensorfold==0.3.5.1) (0.28.1)
+Requirement already satisfied: packaging>=20.9 in /usr/local/lib/python3.12/dist-packages (from huggingface-hub>=0.24->tensorfold==0.3.5.1) (26.2)
+Requirement already satisfied: pyyaml>=5.1 in /usr/lib/python3/dist-packages (from huggingface-hub>=0.24->tensorfold==0.3.5.1) (6.0.1)
+Requirement already satisfied: tqdm>=4.42.1 in /usr/local/lib/python3.12/dist-packages (from huggingface-hub>=0.24->tensorfold==0.3.5.1) (4.69.1)
+Requirement already satisfied: typing-extensions>=4.1.0 in /usr/local/lib/python3.12/dist-packages (from huggingface-hub>=0.24->tensorfold==0.3.5.1) (4.16.0)
+Requirement already satisfied: anyio in /usr/local/lib/python3.12/dist-packages (from httpx<1,>=0.23.0->huggingface-hub>=0.24->tensorfold==0.3.5.1) (4.14.2)
+Requirement already satisfied: certifi in /usr/local/lib/python3.12/dist-packages (from httpx<1,>=0.23.0->huggingface-hub>=0.24->tensorfold==0.3.5.1) (2026.7.22)
+Requirement already satisfied: httpcore==1.* in /usr/local/lib/python3.12/dist-packages (from httpx<1,>=0.23.0->huggingface-hub>=0.24->tensorfold==0.3.5.1) (1.0.9)
+Requirement already satisfied: idna in /usr/local/lib/python3.12/dist-packages (from httpx<1,>=0.23.0->huggingface-hub>=0.24->tensorfold==0.3.5.1) (3.18)
+Requirement already satisfied: h11>=0.16 in /usr/local/lib/python3.12/dist-packages (from httpcore==1.*->httpx<1,>=0.23.0->huggingface-hub>=0.24->tensorfold==0.3.5.1) (0.16.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.12/dist-packages (from jinja2>=3.1->tensorfold==0.3.5.1) (3.0.3)
+Building wheels for collected packages: tensorfold
+  Building wheel for tensorfold (pyproject.toml): started
+  Building wheel for tensorfold (pyproject.toml): finished with status 'done'
+  Created wheel for tensorfold: filename=tensorfold-0.3.5.1-py3-none-any.whl size=897020 sha256=4ae5285403954af169c77a1d0c15d0c90184be561002d974278306970be91ed6
+  Stored in directory: /tmp/pip-ephem-wheel-cache-g8faky3s/wheels/a7/eb/8e/75b73d41cc289748ad5fcbcdb2e1d8da73b0e57ceda4e0d92e
+Successfully built tensorfold
+Installing collected packages: tensorfold
+Successfully installed tensorfold-0.3.5.1
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.

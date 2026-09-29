@@ -1,0 +1,5 @@
+[tensorfold] EXL3 support is experimental: replies are exact, but the MLX checkpoint (Vontra/GLM-5.3-Flash-MLX-4bit-MTP) is tested more and runs faster (docs/recipes/glm-5.3-flash.md)
+[tensorfold] GLM-5.3-Flash runs on two NVIDIA GPUs with 128 GB each (two DGX Sparks): pull it on both and serve with --tp 2 on both (docs/recipes/glm-5.3-flash.md)
+[tensorfold] loading GLM-5.3-Flash-EXL3-TR3-4bpw: GLM-5.3-Flash (glm5_next) on CUDA, rank 1 of 2
+[tensorfold] CUDA rank 1 startup estimate 88.22 GiB within 98.90 GiB; native 1048576, allocated prompt/reply window 2051, cache slots 2560
+[tensorfold] rank 1 ready in 341.2s, following rank 0

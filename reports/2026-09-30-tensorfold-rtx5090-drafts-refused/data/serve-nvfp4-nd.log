@@ -1,0 +1,5 @@
+[tensorfold] loading Qwen3.8-27B-NVFP4: Qwen3.8 dense (qwen3_5) on CUDA
+[tensorfold] CUDA rank 0 startup estimate 26.45 GiB within 26.90 GiB; native 262144, allocated prompt/reply window 16384, cache slots 16396
+[tensorfold] serving Qwen3.8-27B-NVFP4 at http://127.0.0.1:8080/v1 on CUDA (sampling: temperature 1.0, top_k 20, top_p 0.95; drafts: off; context: 16384; loaded in 4.9s)
+[tensorfold] building CUDA extension tensorfold_nvfp4_v2 (first start after an install or update; later starts reuse it)
+[tensorfold] building CUDA extension tensorfold_qwen_b16_v1 (first start after an install or update; later starts reuse it)

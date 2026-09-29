@@ -1,0 +1,4 @@
+[tensorfold] loading Qwen3.8-Flash-Next-MLX-4bit-MTP: Qwen3.8 Flash Next (qwen4_exp) on CUDA
+[tensorfold] CUDA rank 0 startup estimate 84.26 GiB within 101.70 GiB; native 262144, allocated prompt/reply window 101287, cache slots 101294
+[tensorfold] Flash Next on CUDA: 1 to 6 MTP drafts a round, a chain stops before a later draft under 30%; 101287-token prompt/reply window; 101294-token cache; n-gram tables read in 74.9s; 21 decode graphs captured; prompt kernels warmed in 0.9s
+[tensorfold] serving Qwen3.8-Flash-Next-MLX-4bit-MTP at http://127.0.0.1:8080/v1 on CUDA (sampling: temperature 1.0, top_k 20, top_p 0.95; drafts: on; context: 101287; loaded in 194.5s)

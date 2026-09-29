@@ -1,0 +1,66 @@
+[
+ {
+  "label": "",
+  "prompt": "fibonacci-raw",
+  "temperature": 1.0,
+  "tokens": 64,
+  "decode_tps_median": 63.56324381972625,
+  "decode_tps_all": [
+   63.56,
+   63.65,
+   63.82,
+   63.38,
+   63.52
+  ],
+  "ttft_s_median": 0.078833231003955,
+  "sample": "\n\n<think>\nThe user wants a short Python function for the Fibonacci sequence plus an explanation. Let me think about what would be most useful.\n\nOptions:\n1. Recu"
+ },
+ {
+  "label": "",
+  "prompt": "gpu-chat-no-think",
+  "temperature": 1.0,
+  "tokens": 64,
+  "decode_tps_median": 63.42272993692496,
+  "decode_tps_all": [
+   63.12,
+   63.42,
+   63.52,
+   63.56,
+   63.39
+  ],
+  "ttft_s_median": 0.078574754006695,
+  "sample": "### Part 1: How Matrix Multiplication Uses a GPU (Plain English)\n\nImagine you have a huge spreadsheet (Matrix A) and another huge spreadsheet (Matrix B). You ne"
+ },
+ {
+  "label": "",
+  "prompt": "fibonacci-raw",
+  "temperature": 0.0,
+  "tokens": 64,
+  "decode_tps_median": 64.37400211331709,
+  "decode_tps_all": [
+   64.51,
+   64.31,
+   60.23,
+   64.46,
+   64.37
+  ],
+  "ttft_s_median": 0.07832323400361929,
+  "sample": "\n\n<think>\nThe user wants a short Python function for the Fibonacci sequence with an explanation. Let me think about what would be most useful:\n\nOptions:\n1. Recu"
+ },
+ {
+  "label": "",
+  "prompt": "gpu-chat-no-think",
+  "temperature": 0.0,
+  "tokens": 64,
+  "decode_tps_median": 64.3425546955834,
+  "decode_tps_all": [
+   64.16,
+   64.43,
+   64.4,
+   64.34,
+   63.84
+  ],
+  "ttft_s_median": 0.07856587400601711,
+  "sample": "### How Matrix Multiplication Uses a GPU (In Plain English)\n\nTo understand this, it helps to compare a **CPU** (Central Processing Unit) to a **GPU** (Graphics "
+ }
+]
