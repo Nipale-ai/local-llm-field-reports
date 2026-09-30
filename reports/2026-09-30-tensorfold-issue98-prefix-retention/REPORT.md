@@ -2,7 +2,7 @@
 
 # TensorFold issue #98: an identical resend is re-prefilled on Flash Next, resumed on the 27B
 
-**Date:** 2026-09-30 · **Tool:** [TensorFold](https://github.com/ashhart/TensorFold) 0.3.7 · **Upstream issue:** [ashhart/TensorFold#98](https://github.com/ashhart/TensorFold/issues/98)
+**Date:** 2026-09-30 · **Tool:** [TensorFold](https://github.com/ashhart/TensorFold) 0.3.7 and 0.4.0 · **Upstream issue:** [ashhart/TensorFold#98](https://github.com/ashhart/TensorFold/issues/98)
 **Hardware:** one DGX Spark (GB10), container `nvcr.io/nvidia/pytorch:26.07-py3` · default `tensorfold serve` (no cache flags) · temperature 0, 32 output tokens, one request at a time.
 
 The same **11,053-token** prompt was sent three times in a row.
@@ -13,6 +13,15 @@ The same **11,053-token** prompt was sent three times in a row.
 | `Vontra/Qwen3.8-27B-MLX-4bit` + DFlash2 | 7.32 s | 0.11 s | 0.11 s | **11,048 / 11,052** |
 
 Token hashes are identical across the three runs on both models.
+
+### Same test on TensorFold 0.4.0 (pip release)
+
+| Model | prefill run 1 / 2 / 3 | `cached` run 2 / 3 |
+|---|---|---|
+| `Vontra/Qwen3.8-Flash-Next-MLX-4bit-MTP` | 4.89 / 5.96 / 5.86 s | 0 / 0 |
+| `Vontra/Qwen3.8-27B-MLX-4bit` + DFlash2 | 6.96 / 0.11 / 0.11 s | 11,048 / 11,052 |
+
+Same behavior as 0.3.7. Raw rows: `data/results-v040.jsonl`. `main` is 0.5.0 now and was not run.
 
 **Confidence: confirmed** for these two models on this box with default settings (raw rows in `data/`). Not tested: GLM-5.3-Flash and Qwen3.6, which should behave like Flash Next according to our reading of the code (not verified by measurement).
 
