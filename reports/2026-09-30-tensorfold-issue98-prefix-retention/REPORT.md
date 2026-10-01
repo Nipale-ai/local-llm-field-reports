@@ -23,13 +23,13 @@ Token hashes are identical across the three runs on both models.
 
 Same behavior as 0.3.7. Raw rows: `data/results-v040.jsonl`. `main` is 0.5.0 now and was not run.
 
-**Confidence: confirmed** for these two models on this box with default settings (raw rows in `data/`). Not tested: GLM-5.3-Flash and Qwen3.6, which should behave like Flash Next according to our reading of the code (not verified by measurement).
+**Confidence: confirmed** for these two models on this box with default settings (raw rows in `data/`). Not tested: GLM-5.3-Flash and Qwen3.6. Correction: the Qwen3.6 MoE engine also keeps prefixes at message boundaries, so my earlier note on it was incomplete. I have not measured either family.
 
-## Why (our reading of the code on `main`, commit 7a00336; not tested as a fix)
+## Why (my reading of the code on `main`, commit 9cd52ab = 0.5.0; not tested as a fix)
 
 - The 0.3.6.3 changelog says: "the 27B keeps its prompt cache entry one token before the prompt's end, so the next chat turn resumes from it (#65)". In `families/qwen3_5/cuda/engine.py` that is `entry_end`, so a resend is a strict prefix of a cached entry and resumes.
 - On Flash Next, `_decode` remembers the **full** prompt (`families/qwen4_exp/cuda/engine.py`, `self._remember(list(prompt), ...)`) and `_resume` requires `len(ids) < len(prompt)`, so an identical prompt can never hit.
-- A possible fix, **not tested by us:** keep the Flash Next entry at `len(prompt) - 1`, like the 27B.
+- A possible fix, **not tested by me:** keep the Flash Next entry at `len(prompt) - 1`, like the 27B.
 
 ## Raw data
 

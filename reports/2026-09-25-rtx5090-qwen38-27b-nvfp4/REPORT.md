@@ -139,8 +139,8 @@ TTFT: warm ~0.15–0.25 s (c1), ~1.2 s (c2), ~3.4–3.5 s (c4); cold 3.6 s.
 Zero failures, no drop with depth or concurrency — **the engine can do more
 than "50–150 t/s".** The reporter's d0/c1 (~121 t/s) matches our ~130; their
 c4 collapse does not reproduce here → local config/host problem.
-Cross-check: NVFP4 stock 104–118 t/s single-stream vs EXL3 ~130 — EXL3 ahead
-per stream, behind in aggregate.
+Cross-check: NVFP4 stock 104–118 t/s single-stream vs EXL3 ~130. EXL3 is ahead
+per stream and at 4 streams. I did not measure EXL3 at 8 streams.
 
 Receipts: `data/sweep-exl3.jsonl` (first 27 rows = failed
 `/v1/completions` attempt, valid from row 28), `data/exl3_bench.py`,
