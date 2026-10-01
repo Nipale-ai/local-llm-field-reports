@@ -41,9 +41,9 @@ Sampler at 1 Hz: summed RSS of all ninja/nvcc/cicc/ptxas processes +
 
 | parallelism | peak compiler RSS | min MemAvailable | peak procs | duration |
 |---|---:|---:|---:|---:|
-| unbounded (`-j34` = nproc+2 on 32 threads) | **80.2 GiB** | 8.8 GB | 47 | 85.7 s |
-| `MAX_JOBS=8` | **45.7 GiB** | 43 GB | 13 | 122.4 s |
-| `MAX_JOBS=4` | **30.6 GiB** | 59 GB | 9 | 201.9 s |
+| unbounded (`-j34` = nproc+2 on 32 threads) | **80.2 GiB** | 8.4 GiB | 47 | 85.7 s |
+| `MAX_JOBS=8` | **45.7 GiB** | 42.0 GiB | 13 | 122.4 s |
+| `MAX_JOBS=4` | **30.6 GiB** | 57.6 GiB | 9 | 201.9 s |
 
 ~1.7–5.7 GiB per compile job (burst-dependent, cicc/ptxas children counted).
 
@@ -108,7 +108,7 @@ Receipts: `data/sweep-stock.jsonl`, `data/sweep-conc8-mtp1.jsonl`,
 
 - `GPU_UTIL=0.73` alone does **nothing**: `kv_cache_memory_bytes` takes
   precedence (vLLM log: *"does not respect the gpu_memory_utilization
-  config"*) → still 28.9 GB. Receipt: `data/vllm-24g-gpuutil073.log`.
+  config"*) → still 28.2 GiB (28,870 MiB). Receipt: `data/vllm-24g-gpuutil073.log`.
 - Minimal KV pool per context: vLLM computes exactly — 262,144 needs
   ≥ 5.02 GiB; 81,920 needs ≥ 2.02 GiB → chosen **2.0 GiB + 80,896 tokens**.
 - Result profile: **24,372 MiB VRAM** (≈23.8 GiB, ~200 MiB headroom vs a
