@@ -125,7 +125,7 @@ Receipts: `data/sweep-stock.jsonl`, `data/sweep-conc8-mtp1.jsonl`,
 
 Setup: `linux/setup.sh` (via `bash` — it is not executable), profile identical
 to the reporter's: `qwen3.8-27b-exl3-4.0bpw`, 262,144 ctx, int4 KV, budget
-22.8 GB → VRAM 20,566–22,350 MiB. Endpoint only `/v1/chat/completions`
+22.8 GB → VRAM 20,842 to 22,350 MiB (failed requests at 20,566 left out). Endpoint only `/v1/chat/completions`
 (+streaming). Reporter methodology: depth 0 / 4,096 / 8,192 prompt tokens ×
 concurrency 1/2/4 × 128 output tokens × 3 reps.
 
