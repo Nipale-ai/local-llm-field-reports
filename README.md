@@ -8,8 +8,8 @@ own hardware. Each report contains the full numbers — including every variant
 that did **not** work — plus the raw JSONL/log receipts the numbers were taken
 from, so every figure can be re-checked against the data.
 
-**Hardware lab:** 3× NVIDIA DGX Spark (GB10, 128 GB unified memory) ·
-1× RTX 5090 (32 GB) workstation.
+**Hardware lab:** 4× NVIDIA GB10 systems of the DGX Spark class (128 GB unified memory each) ·
+1× RTX 5090 (32 GB) · 2× RTX 5060 Ti (16 GB each).
 
 ## Why this exists
 
